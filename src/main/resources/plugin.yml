@@ -1,0 +1,8 @@
+name: AntiBedBomb
+version: ${project.version}
+main: nl.sleepinglaura.antibedbomb.AntiBedBomb
+api-version: 1.16
+prefix: AntiBedBomb
+authors: [ SleepingLaura ]
+description: Prevents players from killing each other with beds.
+website: sleepinglaura.nl
