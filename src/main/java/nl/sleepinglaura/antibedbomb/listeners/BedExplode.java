@@ -16,6 +16,10 @@ public class BedExplode implements Listener {
 
     private AntiBedBomb plugin;
 
+    public BedExplode(AntiBedBomb pl) {
+        plugin = pl;
+    }
+
     private boolean playerNearby(Player plr) {
         List<Entity> entityList = plr.getNearbyEntities(plugin.getConfig().getInt("radius"),plugin.getConfig().getInt("radius"),plugin.getConfig().getInt("radius"));
         List<Entity> toRemove = new ArrayList<Entity>();
