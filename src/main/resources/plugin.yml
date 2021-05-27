@@ -6,3 +6,8 @@ prefix: AntiBedBomb
 authors: [ SleepingLaura ]
 description: Prevents players from killing each other with beds.
 website: sleepinglaura.nl
+commands:
+  antibedbomb:
+    description: Main command for AntiBedBomb
+    usage: /<command>
+    permission: antibedbomb.use

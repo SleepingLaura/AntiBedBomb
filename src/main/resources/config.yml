@@ -1,0 +1,13 @@
+# AntiBedBomb V1.1 by SleepingLaura
+
+# Prefix for plugin messages
+prefix: "&c[AntiBedBomb] "
+
+# Message when a player tries to explode a bed too close to another player.
+explosionDeniedMessage: "&cYou're not allowed to explode a bed near another player."
+
+# No permission message.
+noPermission: "&cYou do not have permission to execute this command."
+
+# Player check radius (Default: 8)
+radius: 8
