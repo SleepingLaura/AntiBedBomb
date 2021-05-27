@@ -4,7 +4,7 @@
 Prevents players from killing each other using beds.
 
 ## General info
-This plugin prevents players from making a bed explode in a radius of 16 blocks from someone else in end and nether dimensions.
+This plugin prevents players from making a bed explode in a radius from someone else in end and nether dimensions. (Radius can be set in the config or using commands)
 
 ## Commands & Permissions
 **/antibedbomb** - Main command (antibedbomb.use)
