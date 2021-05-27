@@ -9,12 +9,10 @@ public final class AntiBedBomb extends JavaPlugin implements Listener {
 
     public final BedExplode bedListener = new BedExplode();
 
-    @Override
     public void onEnable() {
         saveDefaultConfig();
-        this.getCommand("antibedbomb").setExecutor(new MainCommand());
+        this.getCommand("antibedbomb").setExecutor(new MainCommand(this));
         getServer().getPluginManager().registerEvents(this.bedListener, this);
     }
-
 
 }

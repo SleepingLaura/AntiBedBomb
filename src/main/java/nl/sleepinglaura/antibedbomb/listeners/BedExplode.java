@@ -1,5 +1,6 @@
 package nl.sleepinglaura.antibedbomb.listeners;
 
+import nl.sleepinglaura.antibedbomb.AntiBedBomb;
 import nl.sleepinglaura.antibedbomb.utils.Utils;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
@@ -7,17 +8,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BedExplode extends JavaPlugin implements Listener {
+public class BedExplode implements Listener {
 
-    int radius = getConfig().getInt("radius");
+    private AntiBedBomb plugin;
 
     private boolean playerNearby(Player plr) {
-        List<Entity> entityList = plr.getNearbyEntities(radius,radius,radius);
+        List<Entity> entityList = plr.getNearbyEntities(plugin.getConfig().getInt("radius"),plugin.getConfig().getInt("radius"),plugin.getConfig().getInt("radius"));
         List<Entity> toRemove = new ArrayList<Entity>();
         for (Entity e : entityList) {
             if (!(e instanceof Player)) {
@@ -35,7 +35,7 @@ public class BedExplode extends JavaPlugin implements Listener {
         if (e.getPlayer().getLocation().getWorld().getEnvironment() == World.Environment.NETHER || e.getPlayer().getLocation().getWorld().getEnvironment() == World.Environment.THE_END) {
             if (playerNearby(e.getPlayer())) {
                 e.setCancelled(true);
-                e.getPlayer().sendMessage(Utils.chat(getConfig().getString("prefix") + getConfig().getString("explosionDeniedMessage")));
+                e.getPlayer().sendMessage(Utils.chat(plugin.getConfig().getString("prefix") + plugin.getConfig().getString("explosionDeniedMessage")));
             }
         }
     }
